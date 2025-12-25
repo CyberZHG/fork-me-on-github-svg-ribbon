@@ -1,4 +1,3 @@
-// @ts-ignore
 import { SVGDiagram, SVGNode } from 'sp-svg-diagram';
 
 export function setupRibbonInputOnChange(element: HTMLInputElement, ribbonForm: HTMLFormElement) {
@@ -47,18 +46,18 @@ export function setupDownloadButton(element: HTMLButtonElement, ribbonContainer:
 
 export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : string[] {
     let svgs : string[] = []
-    const ribbonText = data["ribbon-text"]
-    const ribbonColor = data["ribbon-color"]
-    const textColor = data["text-color"]
-    const threadColor = data["thread-color"]
+    const ribbonText = data["ribbon-text"] as string
+    const ribbonColor = data["ribbon-color"] as string
+    const textColor = data["text-color"] as string
+    const threadColor = data["thread-color"] as string
     const imageSize = parseFloat(data["image-size"] as string)
     const halfDiagonalLength = imageSize * Math.sqrt(2.0) / 2.0
     const ribbonShift = parseFloat(data["ribbon-shift"] as string) / 100 * halfDiagonalLength
     const ribbonHeight = parseFloat(data["ribbon-height"] as string) / 100 * imageSize
     const threadMargin = parseFloat(data["thread-margin"] as string) / 100 * ribbonHeight
     const shadowHeight = parseFloat(data["shadow-height"] as string) / 100 * ribbonHeight
-    const drawShadow = data["draw-shadow"]
-    const fontFamily = data["font-family"]
+    const drawShadow = data["draw-shadow"] as string
+    const fontFamily = data["font-family"] as string
     const fontSize = parseFloat(data["font-size"] as string) / 100 * ribbonHeight
     for (let i = 0; i < 4; ++i) {
         const diagram = new SVGDiagram()
