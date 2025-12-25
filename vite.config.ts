@@ -24,7 +24,7 @@ const wasmMiddleware = () => {
 };
 
 export default defineConfig({
-    base: "fork-me-on-github-svg-ribbon",
+    base: "/fork-me-on-github-svg-ribbon",
     plugins: [
         tailwindcss(),
         wasmMiddleware(),

@@ -15,7 +15,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^25.0.3",
-    "sp-svg-diagram": "^1.2.3",
+    "sp-svg-diagram": "~1.2.6",
     "tailwindcss": "^4.1.18"
   }
 }
