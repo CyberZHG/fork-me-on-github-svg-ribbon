@@ -9,10 +9,14 @@ const ribbonContainers = [
     document.querySelector<HTMLDivElement>('#ribbon-container-bottom-right')!,
 ]
 const downloadButtons = [
-    document.querySelector<HTMLButtonElement>('#download-top-left')!,
-    document.querySelector<HTMLButtonElement>('#download-top-right')!,
-    document.querySelector<HTMLButtonElement>('#download-bottom-left')!,
-    document.querySelector<HTMLButtonElement>('#download-bottom-right')!,
+    document.querySelector<HTMLButtonElement>('#download-top-left-svg')!,
+    document.querySelector<HTMLButtonElement>('#download-top-right-svg')!,
+    document.querySelector<HTMLButtonElement>('#download-bottom-left-svg')!,
+    document.querySelector<HTMLButtonElement>('#download-bottom-right-svg')!,
+    document.querySelector<HTMLButtonElement>('#download-top-left-png')!,
+    document.querySelector<HTMLButtonElement>('#download-top-right-png')!,
+    document.querySelector<HTMLButtonElement>('#download-bottom-left-png')!,
+    document.querySelector<HTMLButtonElement>('#download-bottom-right-png')!,
 ]
 const ribbonShift = document.querySelector<HTMLInputElement>('#ribbon-shift')!
 const imageSize = document.querySelector<HTMLInputElement>('#image-size')!
@@ -36,9 +40,14 @@ setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#text-bold')!
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#font-family')!, ribbonForm)
 setupSubmitForm(ribbonForm, ribbonContainers)
 
-for (let i = 0; i < 4; ++i) {
-    setupDownloadButton(downloadButtons[i], ribbonContainers[i])
-}
+setupDownloadButton(downloadButtons[0], ribbonContainers[0], "-top-left")
+setupDownloadButton(downloadButtons[1], ribbonContainers[1], "-top-right")
+setupDownloadButton(downloadButtons[2], ribbonContainers[2], "-bottom-left")
+setupDownloadButton(downloadButtons[3], ribbonContainers[3], "-bottom-right")
+setupDownloadButton(downloadButtons[4], ribbonContainers[0], "-top-left", true)
+setupDownloadButton(downloadButtons[5], ribbonContainers[1], "-top-right", true)
+setupDownloadButton(downloadButtons[6], ribbonContainers[2], "-bottom-left", true)
+setupDownloadButton(downloadButtons[7], ribbonContainers[3], "-bottom-right", true)
 
 function setupRangeValueDisplay(rangeInput: HTMLInputElement, valueID: string) {
     rangeInput.addEventListener('input', () => {
