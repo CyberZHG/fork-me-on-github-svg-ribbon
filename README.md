@@ -1,6 +1,8 @@
 "Fork me on GitHub" SVG Ribbon Generator
 ========================================
 
+[![Build & Deploy](https://github.com/CyberZHG/fork-me-on-github-svg-ribbon/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/CyberZHG/fork-me-on-github-svg-ribbon/actions/workflows/build-and-deploy.yml)
+
 ## Introduction
 
 https://cyberzhg.github.io/fork-me-on-github-svg-ribbon/
