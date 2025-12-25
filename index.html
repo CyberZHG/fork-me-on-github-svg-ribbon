@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fork-me-on-github-svg-ribbon/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fork me on GitHub SVG Ribbon Generator</title>
+    <script type="module" crossorigin src="/fork-me-on-github-svg-ribbon/assets/index-CzwUt0Qu.js"></script>
+    <link rel="stylesheet" crossorigin href="/fork-me-on-github-svg-ribbon/assets/index-DvLDKhFG.css">
+  </head>
+  <body class="h-screen">
+    <div class="flex h-full">
+      <aside class="w-90 bg-gray-800 text-white flex-shrink-0">
+        <div class="p-4 text-xl font-bold border-b border-gray-700">
+          SVG Ribbon Generator
+        </div>
+        <nav class="p-4 space-y-2">
+          <form id="ribbon-form">
+            <label class="block text-sm font-medium text-white">
+              Text on ribbon:
+            </label>
+            <label>
+              <input id="ribbon-text" name="ribbon-text" type="text" placeholder="Fork me on GitHub" value="Fork me on GitHub" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"/>
+            </label>
+            <label class="block pt-4 text-sm font-medium text-white">
+              Ribbon color:
+            </label>
+            <label>
+              <input id="ribbon-color" name="ribbon-color" type="color" class="h-10 w-20 cursor-pointer border-gray-300"/>
+            </label>
+            <label class="block pt-4 text-sm font-medium text-white">
+              Ribbon shift:
+            </label>
+            <label>
+              <input id="ribbon-shift" name="ribbon-shift" type="range" min="0" max="100" value="25" class="w-full accent-blue-600 cursor-pointer"/>
+            </label>
+          </form>
+        </nav>
+      </aside>
+
+      <main class="flex-1 bg-gray-100">
+        <div class="h-full flex items-center justify-center">
+          <div class="grid grid-cols-2 gap-16">
+            <div>
+              <div id="ribbon-container-top-left" class="w-48 h-48 object-cover rounded-lg shadow"></div>
+              <div class="py-2">
+                <button id="download-top-left" class="w-full rounded-md bg-gray-400 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Download
+                </button>
+              </div>
+            </div>
+            <div>
+              <div id="ribbon-container-top-right" class="w-48 h-48 object-cover rounded-lg shadow"></div>
+              <div class="py-2">
+                <button id="download-top-right" class="w-full rounded-md bg-gray-400 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Download
+                </button>
+              </div>
+            </div>
+            <div>
+              <div id="ribbon-container-bottom-left" class="w-48 h-48 object-cover rounded-lg shadow"></div>
+              <div class="py-2">
+                <button id="download-bottom-left" class="w-full rounded-md bg-gray-400 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Download
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div id="ribbon-container-bottom-right" class="w-48 h-48 object-cover rounded-lg shadow"></div>
+              <div class="py-2">
+                <button id="download-bottom-right" class="w-full rounded-md bg-gray-400 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Download
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
