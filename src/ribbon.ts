@@ -53,6 +53,8 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
     const halfDiagonalLength = imageSize * Math.sqrt(2.0) / 2.0
     const ribbonShift = parseFloat(data["ribbon-shift"] as string) / 100 * halfDiagonalLength
     const ribbonHeight = parseFloat(data["ribbon-height"] as string) / 100 * imageSize
+    const threadMargin = parseFloat(data["thread-margin"] as string) / 100 * ribbonHeight
+    const shadowHeight = parseFloat(data["shadow-height"] as string) / 100 * ribbonHeight
     for (let i = 0; i < 4; ++i) {
         const diagram = new SVGDiagram()
         diagram.setFixedViewBox(0, 0, imageSize, imageSize)
@@ -71,7 +73,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
         shadow.setShape(SVGNode.SHAPE_RECT)
         shadow.setColor("none")
         shadow.setCenter(imageSize / 2, centerY)
-        shadow.setFixedSize(1000, ribbonHeight + 8)
+        shadow.setFixedSize(1000, shadowHeight)
         shadow.setGradientAngle(90)
         shadow.setFillColor("#00000000:#000000A8:#00000000")
         shadow.delete()
@@ -91,7 +93,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
         thread.setColor(threadColor)
         thread.setFillColor("none")
         thread.setStyle("dashed")
-        thread.setFixedSize(1000, ribbonHeight - 5)
+        thread.setFixedSize(1000, ribbonHeight - threadMargin * 2)
         thread.delete()
         let svg = diagram.render()
         svg = svg.replaceAll('stroke-dasharray="5,2"', 'stroke-dasharray="2,2"')

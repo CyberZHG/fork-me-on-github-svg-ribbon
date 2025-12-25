@@ -17,6 +17,8 @@ const downloadButtons = [
 const ribbonShift = document.querySelector<HTMLInputElement>('#ribbon-shift')!
 const imageSize = document.querySelector<HTMLInputElement>('#image-size')!
 const ribbonHeight = document.querySelector<HTMLInputElement>('#ribbon-height')!
+const threadMargin = document.querySelector<HTMLInputElement>('#thread-margin')!
+const shadowHeight = document.querySelector<HTMLInputElement>('#shadow-height')!
 
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-text')!, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-color')!, ribbonForm)
@@ -25,6 +27,8 @@ setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#thread-color
 setupRibbonInputOnChange(ribbonShift, ribbonForm)
 setupRibbonInputOnChange(imageSize, ribbonForm)
 setupRibbonInputOnChange(ribbonHeight, ribbonForm)
+setupRibbonInputOnChange(threadMargin, ribbonForm)
+setupRibbonInputOnChange(shadowHeight, ribbonForm)
 setupSubmitForm(ribbonForm, ribbonContainers)
 
 for (let i = 0; i < 4; ++i) {
@@ -42,3 +46,5 @@ function setupRangeValueDisplay(rangeInput: HTMLInputElement, valueID: string) {
 setupRangeValueDisplay(ribbonShift, '#ribbon-shift-value')
 setupRangeValueDisplay(imageSize, '#image-size-value')
 setupRangeValueDisplay(ribbonHeight, '#ribbon-height-value')
+setupRangeValueDisplay(threadMargin, '#thread-margin-value')
+setupRangeValueDisplay(shadowHeight, '#shadow-height-value')
