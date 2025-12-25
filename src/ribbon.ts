@@ -36,7 +36,6 @@ export function setupDownloadButton(element: HTMLButtonElement, ribbonContainer:
 
         const img = new Image()
         img.crossOrigin = "anonymous"
-        img.src = url
         img.onload = () => {
             let fileName = `fork-me-ribbon${suffix}.svg`
             if (toPng) {
@@ -60,6 +59,7 @@ export function setupDownloadButton(element: HTMLButtonElement, ribbonContainer:
             document.body.removeChild(a)
             URL.revokeObjectURL(url)
         }
+        img.src = url
     })
 }
 
