@@ -5,12 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/fork-me-on-github-svg-ribbon/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fork me on GitHub - SVG Ribbon Generator</title>
-    <script type="module" crossorigin src="/fork-me-on-github-svg-ribbon/assets/index-DZwKTIYT.js"></script>
-    <link rel="stylesheet" crossorigin href="/fork-me-on-github-svg-ribbon/assets/index-Bc2vSg46.css">
+    <script type="module" crossorigin src="/fork-me-on-github-svg-ribbon/assets/index-vN77b46e.js"></script>
+    <link rel="stylesheet" crossorigin href="/fork-me-on-github-svg-ribbon/assets/index-DxDhqmBu.css">
   </head>
   <body class="h-screen">
     <div class="flex h-full">
-      <aside class="w-90 bg-gray-800 text-white flex-shrink-0">
+      <aside class="w-90 bg-gray-800 text-white flex-shrink-0  overflow-y-auto">
         <div class="p-4 text-xl font-bold border-b border-gray-700">
           <a href="https://github.com/CyberZHG/fork-me-on-github-svg-ribbon">SVG Ribbon Generator</a>
         </div>
@@ -72,11 +72,33 @@
             <label>
               <input id="thread-margin" name="thread-margin" type="range" min="1" max="50" value="8" class="w-full accent-blue-600 cursor-pointer"/>
             </label>
+            <label class="flex pt-4 items-center gap-2 cursor-pointe">
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input id="draw-shadow" name="draw-shadow" type="checkbox" class="sr-only peer" checked />
+                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-5 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500">
+                </div>
+                <span class="px-2 text-sm font-medium text-white">Draw Shadow</span>
+              </label>
+            </label>
             <label class="block pt-4 text-sm font-medium text-white">
               Shadow Height (<span id="shadow-height-value">125</span>%)
             </label>
             <label>
               <input id="shadow-height" name="shadow-height" type="range" min="100" max="200" value="125" class="w-full accent-blue-600 cursor-pointer"/>
+            </label>
+            <label class="flex pt-4 items-center gap-2 cursor-pointe">
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input id="text-bold" name="text-bold" type="checkbox" class="sr-only peer" />
+                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-5 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500">
+                </div>
+                <span class="px-2 text-sm font-medium text-white">Bold Text</span>
+              </label>
+            </label>
+            <label class="block pt-4 text-sm font-medium text-white">
+              Font Family
+            </label>
+            <label>
+              <input id="font-family" name="font-family" type="text" placeholder="Helvetica Neue, Arial, sans-serif" value="Helvetica Neue, Arial, sans-serif" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"/>
             </label>
           </form>
         </nav>
