@@ -18,8 +18,10 @@ export function setupSubmitForm(element: HTMLFormElement, ribbonContainers: HTML
             ribbonContainers[i].innerHTML = results[i];
             const svg = ribbonContainers[i].querySelector<SVGSVGElement>('svg')
             svg?.classList.add("w-full", "h-full", "object-cover")
-            // const text = ribbonContainers[i].querySelector<SVGSVGElement>('text')
-            // text?.setAttribute("font-weight", "bold")
+            if (data["text-bold"] == "on") {
+                const text = ribbonContainers[i].querySelector<SVGSVGElement>('text')
+                text?.setAttribute("font-weight", "bold")
+            }
         }
     })
     element.requestSubmit()
@@ -56,6 +58,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
     const threadMargin = parseFloat(data["thread-margin"] as string) / 100 * ribbonHeight
     const shadowHeight = parseFloat(data["shadow-height"] as string) / 100 * ribbonHeight
     const drawShadow = data["draw-shadow"]
+    const fontFamily = data["font-family"]
     for (let i = 0; i < 4; ++i) {
         const diagram = new SVGDiagram()
         diagram.setFixedViewBox(0, 0, imageSize, imageSize)
@@ -88,7 +91,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
         ribbon.setFillColor(ribbonColor)
         ribbon.setFixedSize(1000, ribbonHeight)
         ribbon.setFontColor(textColor)
-        ribbon.setFontName("Helvetica Neue, Arial, sans-serif")
+        ribbon.setFontName(fontFamily)
         ribbon.delete()
         const thread = diagram.addNode("thread")
         thread.setShape(SVGNode.SHAPE_RECT)

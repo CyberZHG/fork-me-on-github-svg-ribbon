@@ -30,6 +30,8 @@ setupRibbonInputOnChange(ribbonHeight, ribbonForm)
 setupRibbonInputOnChange(threadMargin, ribbonForm)
 setupRibbonInputOnChange(shadowHeight, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#draw-shadow')!, ribbonForm)
+setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#text-bold')!, ribbonForm)
+setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#font-family')!, ribbonForm)
 setupSubmitForm(ribbonForm, ribbonContainers)
 
 for (let i = 0; i < 4; ++i) {
