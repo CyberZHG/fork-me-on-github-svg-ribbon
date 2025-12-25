@@ -14,11 +14,30 @@ const downloadButtons = [
     document.querySelector<HTMLButtonElement>('#download-bottom-left')!,
     document.querySelector<HTMLButtonElement>('#download-bottom-right')!,
 ]
+const ribbonShift = document.querySelector<HTMLInputElement>('#ribbon-shift')!
+const imageSize = document.querySelector<HTMLInputElement>('#image-size')!
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-text')!, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-color')!, ribbonForm)
-setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-shift')!, ribbonForm)
+setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#text-color')!, ribbonForm)
+setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#thread-color')!, ribbonForm)
+setupRibbonInputOnChange(ribbonShift, ribbonForm)
+setupRibbonInputOnChange(imageSize, ribbonForm)
 setupSubmitForm(ribbonForm, ribbonContainers)
 
 for (let i = 0; i < 4; ++i) {
     setupDownloadButton(downloadButtons[i], ribbonContainers[i])
 }
+
+ribbonShift.addEventListener('input', () => {
+    const valueElement = document.querySelector<HTMLSpanElement>('#ribbon-shift-value')
+    if (valueElement) {
+        valueElement.textContent = ribbonShift.value
+    }
+})
+
+imageSize.addEventListener('input', () => {
+    const valueElement = document.querySelector<HTMLSpanElement>('#image-size-value')
+    if (valueElement) {
+        valueElement.textContent = imageSize.value
+    }
+})
