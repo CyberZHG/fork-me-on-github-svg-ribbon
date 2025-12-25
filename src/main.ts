@@ -29,6 +29,7 @@ setupRibbonInputOnChange(imageSize, ribbonForm)
 setupRibbonInputOnChange(ribbonHeight, ribbonForm)
 setupRibbonInputOnChange(threadMargin, ribbonForm)
 setupRibbonInputOnChange(shadowHeight, ribbonForm)
+setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#draw-shadow')!, ribbonForm)
 setupSubmitForm(ribbonForm, ribbonContainers)
 
 for (let i = 0; i < 4; ++i) {
