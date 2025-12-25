@@ -4,35 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/fork-me-on-github-svg-ribbon/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fork me on GitHub SVG Ribbon Generator</title>
-    <script type="module" crossorigin src="/fork-me-on-github-svg-ribbon/assets/index-CzwUt0Qu.js"></script>
-    <link rel="stylesheet" crossorigin href="/fork-me-on-github-svg-ribbon/assets/index-DvLDKhFG.css">
+    <title>Fork me on GitHub - SVG Ribbon Generator</title>
+    <script type="module" crossorigin src="/fork-me-on-github-svg-ribbon/assets/index-B7-y3MCP.js"></script>
+    <link rel="stylesheet" crossorigin href="/fork-me-on-github-svg-ribbon/assets/index-Bc2vSg46.css">
   </head>
   <body class="h-screen">
     <div class="flex h-full">
       <aside class="w-90 bg-gray-800 text-white flex-shrink-0">
         <div class="p-4 text-xl font-bold border-b border-gray-700">
-          SVG Ribbon Generator
+          <a href="https://github.com/CyberZHG/fork-me-on-github-svg-ribbon">SVG Ribbon Generator</a>
         </div>
         <nav class="p-4 space-y-2">
           <form id="ribbon-form">
             <label class="block text-sm font-medium text-white">
-              Text on ribbon:
+              Text on Ribbon
             </label>
             <label>
               <input id="ribbon-text" name="ribbon-text" type="text" placeholder="Fork me on GitHub" value="Fork me on GitHub" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"/>
             </label>
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <label class="block pt-4 text-sm font-medium text-white">
+                  Ribbon Color
+                </label>
+                <label>
+                  <input id="ribbon-color" name="ribbon-color" type="color" class="h-10 w-20 cursor-pointer border-gray-300" value="#000000"/>
+                </label>
+              </div>
+              <div>
+                <label class="block pt-4 text-sm font-medium text-white">
+                  Text Color
+                </label>
+                <label>
+                  <input id="text-color" name="text-color" type="color" class="h-10 w-20 cursor-pointer border-gray-300" value="#FFFFFF"/>
+                </label>
+              </div>
+              <div>
+                <label class="block pt-4 text-sm font-medium text-white">
+                  Thread Color
+                </label>
+                <label>
+                  <input id="thread-color" name="thread-color" type="color" class="h-10 w-20 cursor-pointer border-gray-300" value="#888888"/>
+                </label>
+              </div>
+            </div>
             <label class="block pt-4 text-sm font-medium text-white">
-              Ribbon color:
-            </label>
-            <label>
-              <input id="ribbon-color" name="ribbon-color" type="color" class="h-10 w-20 cursor-pointer border-gray-300"/>
-            </label>
-            <label class="block pt-4 text-sm font-medium text-white">
-              Ribbon shift:
+              Ribbon Shift (<span id="ribbon-shift-value">25</span>%)
             </label>
             <label>
               <input id="ribbon-shift" name="ribbon-shift" type="range" min="0" max="100" value="25" class="w-full accent-blue-600 cursor-pointer"/>
+            </label>
+            <label class="block pt-4 text-sm font-medium text-white">
+              Image Size (<span id="image-size-value">150</span>)
+            </label>
+            <label>
+              <input id="image-size" name="image-size" type="range" min="50" max="300" value="150" class="w-full accent-blue-600 cursor-pointer"/>
             </label>
           </form>
         </nav>
