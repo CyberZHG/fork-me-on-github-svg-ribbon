@@ -1,4 +1,4 @@
-import { SVGDiagram, SVGNode } from 'sp-svg-diagram';
+import { SVGDiagram, SVGNode } from 'sp-svg-diagram'
 
 export function setupRibbonInputOnChange(element: HTMLInputElement, ribbonForm: HTMLFormElement) {
     element.addEventListener('change', () => {
@@ -14,7 +14,7 @@ export function setupSubmitForm(element: HTMLFormElement, ribbonContainers: HTML
         const data = Object.fromEntries(formData.entries())
         const results = generateRibbons(data)
         for (let i = 0; i < 4; ++i) {
-            ribbonContainers[i].innerHTML = results[i];
+            ribbonContainers[i].innerHTML = results[i]
             const svg = ribbonContainers[i].querySelector<SVGSVGElement>('svg')
             svg?.classList.add("w-full", "h-full", "object-cover")
             if (data["text-bold"] == "on") {
@@ -26,21 +26,40 @@ export function setupSubmitForm(element: HTMLFormElement, ribbonContainers: HTML
     element.requestSubmit()
 }
 
-export function setupDownloadButton(element: HTMLButtonElement, ribbonContainer: HTMLDivElement) {
+export function setupDownloadButton(element: HTMLButtonElement, ribbonContainer: HTMLDivElement, suffix: string = "", toPng: boolean = false) {
     element.addEventListener('click', () => {
-        const svgElement = ribbonContainer.querySelector<SVGSVGElement>('svg')
-        svgElement?.classList.remove("w-full", "h-full", "object-cover");
-        const svg = ribbonContainer.innerHTML
+        const svgElement = ribbonContainer.querySelector<SVGSVGElement>('svg')!
+        let svg = ribbonContainer.innerHTML
+        svg = svg.replaceAll(" class=\"w-full h-full object-cover\"", "")
         const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' })
-        const url = URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = 'fork-me-ribbon.svg'
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-        URL.revokeObjectURL(url)
-        svgElement?.classList.add("w-full", "h-full", "object-cover");
+        let url = URL.createObjectURL(blob)
+
+        const img = new Image()
+        img.crossOrigin = "anonymous"
+        img.src = url
+        img.onload = () => {
+            let fileName = `fork-me-ribbon${suffix}.svg`
+            if (toPng) {
+                fileName = `fork-me-ribbon${suffix}.png`
+                const scale = window.devicePixelRatio
+                const bbox = svgElement.getBoundingClientRect()
+                const canvas = document.createElement("canvas")!
+                canvas.width = bbox.width * scale
+                canvas.height = bbox.height * scale
+                const ctx = canvas.getContext("2d")!
+                ctx.scale(scale, scale)
+                ctx.drawImage(img, 0, 0, bbox.width, bbox.height)
+                url = canvas.toDataURL("image/png")
+            }
+
+            const a = document.createElement('a')
+            a.href = url
+            a.download = fileName
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+            URL.revokeObjectURL(url)
+        }
     })
 }
 
@@ -69,9 +88,9 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
         }
         let centerY = imageSize / 2
         if (i == 0 || i == 1){
-            centerY -= ribbonShift;
+            centerY -= ribbonShift
         } else {
-            centerY += ribbonShift;
+            centerY += ribbonShift
         }
         if (drawShadow == "on") {
             const shadow = diagram.addNode("shadow")
