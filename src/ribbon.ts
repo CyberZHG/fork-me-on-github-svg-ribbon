@@ -59,6 +59,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
     const shadowHeight = parseFloat(data["shadow-height"] as string) / 100 * ribbonHeight
     const drawShadow = data["draw-shadow"]
     const fontFamily = data["font-family"]
+    const fontSize = parseFloat(data["font-size"] as string) / 100 * ribbonHeight
     for (let i = 0; i < 4; ++i) {
         const diagram = new SVGDiagram()
         diagram.setFixedViewBox(0, 0, imageSize, imageSize)
@@ -92,6 +93,7 @@ export function generateRibbons(data: { [k: string]: FormDataEntryValue; }) : st
         ribbon.setFixedSize(1000, ribbonHeight)
         ribbon.setFontColor(textColor)
         ribbon.setFontName(fontFamily)
+        ribbon.setFontSize(fontSize)
         ribbon.delete()
         const thread = diagram.addNode("thread")
         thread.setShape(SVGNode.SHAPE_RECT)

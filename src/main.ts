@@ -19,6 +19,7 @@ const imageSize = document.querySelector<HTMLInputElement>('#image-size')!
 const ribbonHeight = document.querySelector<HTMLInputElement>('#ribbon-height')!
 const threadMargin = document.querySelector<HTMLInputElement>('#thread-margin')!
 const shadowHeight = document.querySelector<HTMLInputElement>('#shadow-height')!
+const fontSize = document.querySelector<HTMLInputElement>('#font-size')!
 
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-text')!, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#ribbon-color')!, ribbonForm)
@@ -29,6 +30,7 @@ setupRibbonInputOnChange(imageSize, ribbonForm)
 setupRibbonInputOnChange(ribbonHeight, ribbonForm)
 setupRibbonInputOnChange(threadMargin, ribbonForm)
 setupRibbonInputOnChange(shadowHeight, ribbonForm)
+setupRibbonInputOnChange(fontSize, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#draw-shadow')!, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#text-bold')!, ribbonForm)
 setupRibbonInputOnChange(document.querySelector<HTMLInputElement>('#font-family')!, ribbonForm)
@@ -51,3 +53,4 @@ setupRangeValueDisplay(imageSize, '#image-size-value')
 setupRangeValueDisplay(ribbonHeight, '#ribbon-height-value')
 setupRangeValueDisplay(threadMargin, '#thread-margin-value')
 setupRangeValueDisplay(shadowHeight, '#shadow-height-value')
+setupRangeValueDisplay(fontSize, '#font-size-value')
