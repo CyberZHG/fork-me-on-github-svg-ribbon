@@ -2,6 +2,7 @@
 ========================================
 
 [![Build & Deploy](https://github.com/CyberZHG/fork-me-on-github-svg-ribbon/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/CyberZHG/fork-me-on-github-svg-ribbon/actions/workflows/build-and-deploy.yml)
+![](https://visitor-badge.laobi.icu/badge?page_id=cyberzhg.fork-me-on-github-svg-ribbon)
 
 ## Introduction
 
